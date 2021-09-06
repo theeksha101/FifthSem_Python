@@ -1,14 +1,11 @@
-from LanguageProcessing import Tries
 
-keywords = Tries.Trie()
+emot = {1: {'STOP': 00, 'ADD': 1, 'SUB': 2, 'MULT': 3, 'MOVER': 4, 'MOVEM': 5, 'COMP':6,
+            'BC': 7, 'DIV': 8, 'READ': 9, 'PRINT': 10},
+        2: {'DS': 1, 'DC': 2},
+        3: {'START': 1, 'END': 2, 'ORIGIN': 3, 'EQU': 4, 'LTORG': 5},
+        4: {'AREG': 1, 'BREG': 2, 'CREG': 3},
+        5: {'EQ': 1, 'LT': 2, 'GT': 3, 'NE': 4, 'LE': 5, 'GE': 6, 'ANY': 7}}
 
-emot = ['STOP', 'ADD', 'SUB', 'MULT', 'MOVER', 'MOVEM', 'COMP', 'BC',
-        'DIV', 'READ', 'PRINT', 'START', 'END', 'ORIGIN', 'EQU', 'LTORG',
-        'DS', 'DC', 'AREG', 'BREG', 'CREG', 'EQ', 'LT', 'GE', 'NE',
-        'LE', 'GT', 'ANY']
-
-for keyword in emot:
-    keywords.insert(keyword)
 
 file = open('/home/diksha/PycharmProjects/FifthSem/LanguageProcessing/week_1/code.txt', 'r')
 
@@ -29,10 +26,13 @@ for i in file:
         symbol_table[split_string[0]] = [lc, size]
         lc += 1
         continue
-
-    if not keywords.search(split_string[0]):
+    j = 1
+    while j <= 5:
+        if split_string[0] in emot[j]:
+            break
+        j += 1
+    else:
         symbol_table[split_string[0]] = [lc, size]
-
     lc += size
 
 print(symbol_table)
