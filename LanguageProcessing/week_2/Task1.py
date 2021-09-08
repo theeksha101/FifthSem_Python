@@ -1,3 +1,4 @@
+#  Week2 Task1 making Symbol Table with 3 fields
 
 emot = {1: {'STOP': 00, 'ADD': 1, 'SUB': 2, 'MULT': 3, 'MOVER': 4, 'MOVEM': 5, 'COMP':6,
             'BC': 7, 'DIV': 8, 'READ': 9, 'PRINT': 10},
