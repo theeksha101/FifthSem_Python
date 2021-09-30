@@ -14,7 +14,6 @@ symbol_table = {}
 
 
 def generate_symbol(_file):
-
     location_counter = _file.readline().split()
     lc = int(location_counter[1])
     size = 0
@@ -87,7 +86,6 @@ def generate_literal(file_):
 
 
 if __name__ == '__main__':
-
     file2 = open('/home/diksha/PycharmProjects/FifthSem/LanguageProcessing/week_3/input_taks2.txt', 'r')
     generate_symbol(file2)
     file = open('/home/diksha/PycharmProjects/FifthSem/LanguageProcessing/week_3/input_taks2.txt', 'r')
